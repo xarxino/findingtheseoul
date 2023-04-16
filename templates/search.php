@@ -1,4 +1,4 @@
-<?php get_header(); ?>
+<?php get_template_part('partials/header');; ?>
 
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
     <h1 class="text-3xl font-bold mb-8"><?php printf(__('Search Results for: %s', 'textdomain'), '<span class="text-blue-500">' . get_search_query() . '</span>'); ?></h1>
@@ -13,7 +13,7 @@
                         </a>
                     <?php endif; ?>
                     <div class="p-4">
-                        <h2 class="text-xl font-bold mb-2"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+                        <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
                         <div class="text-gray-700 mb-4"><?php the_excerpt(); ?></div>
                         <a href="<?php the_permalink(); ?>" class="inline-block bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"><?php _e('Read more', 'textdomain'); ?></a>
                     </div>
@@ -31,4 +31,4 @@
     <?php endif; ?>
 </div>
 
-<?php get_footer(); ?>
+<?php get_template_part('partials/footer');; ?>
