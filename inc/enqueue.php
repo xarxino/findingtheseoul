@@ -5,6 +5,10 @@
 function enqueue_findingtheseoul_assets()
 {
     wp_enqueue_script('findingtheseoul-bundle', get_theme_file_uri('/assets/dist/bundle.js'), null, '1.0', true);
+
+    // Enqueue the 'findingtheseoul-style' style.
+    wp_enqueue_style('findingtheseoul-style', get_theme_file_uri('/assets/dist/styles.css'), null, '1.0');
+
 }
 
 add_action('wp_enqueue_scripts', 'enqueue_findingtheseoul_assets');
