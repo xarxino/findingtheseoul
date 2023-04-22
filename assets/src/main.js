@@ -8,7 +8,3 @@ import "./main.css";
 
 // Import the JS files
 import "./js/livesearch";
-
-// Import Feather Icons
-const feather = require("feather-icons");
-feather.replace({ "stroke-width": 1.25 });
