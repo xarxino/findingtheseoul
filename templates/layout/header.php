@@ -31,7 +31,7 @@
             </div>
             <?php get_template_part('components/search-form') ?>
             <div class="flex items-center gap-4">
-                <?php get_template_part('components/login-section') ?>
+                <?php get_template_part('components/account-dropdown') ?>
             </div>
         </div>
         <?php wp_nav_menu(
