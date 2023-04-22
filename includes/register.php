@@ -22,10 +22,12 @@ add_filter('upload_mimes', 'add_svg_support');
 function register_findingtheseoul_menus()
 {
     // Register the 'Primary Menu' and 'Footer Menu' navigation menus.
-    register_nav_menus(array(
-        'primary' => __('Primary Menu', 'findingtheseoul'),
-        'footer' => __('Footer Menu', 'findingtheseoul'),
-    ));
+    register_nav_menus(
+        array(
+            'primary' => __('Primary Menu', 'findingtheseoul'),
+            'footer' => __('Footer Menu', 'findingtheseoul'),
+        )
+    );
 }
 
 // Add the custom navigation menu registration action.
