@@ -28,7 +28,7 @@ function createColumn(title, items, query, isPost = false, archiveLink = "") {
         .map((item) => {
           const itemName = isPost ? item.title : item.name;
           const name = itemName.replace(regex, "<strong>$1</strong>");
-          return `<li class="border-b last-of-type:border-none border-gray-200 py-2"><a class="hover:underline" href="${
+          return `<li class="border-b last-of-type:border-none border-zinc-200 py-2"><a class="hover:underline" href="${
             item.url || item.permalink
           }">${name}</a></li>`;
         })
@@ -62,7 +62,7 @@ function updateSearchResults(query) {
   // Display rotating icon for loading animation
   searchResults.innerHTML = `
     <div class="loading-animation flex justify-center items-center">
-      <svg class="animate-spin h-5 w-5 text-gray-500" viewBox="0 0 24 24">
+      <svg class="animate-spin h-5 w-5 text-zinc-500" viewBox="0 0 24 24">
         <path d="M12 2a9 9 0 00-9 9 1 1 0 002 0 7 7 0 0114 0 1 1 0 102 0 9 9 0 00-9-9z" fill="currentColor" />
       </svg>
     </div>

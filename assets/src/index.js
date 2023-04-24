@@ -7,4 +7,4 @@ initializes all necessary modules and dependencies.
 import "./main.css";
 
 // Import the JS files
-import "./js/livesearch";
+import "./modules/livesearch";

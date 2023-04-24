@@ -1,13 +1,17 @@
 <?php
 
 /**
- * Plugin Name: Live Search
+ * This function adds Livesearch to the website.
  */
 
 // Enqueue the JavaScript file
 function livesearch_enqueue_scripts()
 {
-    wp_enqueue_script('livesearch-js', get_stylesheet_directory_uri() . '/assets/src/js/livesearch.js', array(), '1.0.0', true);
+
+    wp_enqueue_script('livesearch-js', get_stylesheet_directory_uri() . '/assets/src/modules/livesearch.js', array(), '1.0.0', true);
+
+    // Pass data to the 'livesearch-ajax-script' script using the 'wp_localize_script()' function.
+    wp_localize_script('livesearch-ajax-script', 'livesearch_ajax_object', array('ajax_url' => admin_url('admin-ajax.php')));
 
     $categories_page_id = 1; // Replace this with the ID of your categories page
     $tags_page_id = 2; // Replace this with the ID of your tags archive page

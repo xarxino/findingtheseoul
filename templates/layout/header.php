@@ -10,7 +10,7 @@
 <body <?php body_class(); ?>>
 
     <header class="flex flex-col">
-        <div class="container flex flex-row items-center justify-between py-4 md:py-6">
+        <div class="container flex flex-row items-center justify-between py-2 md:py-3">
             <div class="flex flex-col md:items-center md:flex-row md:gap-4 lg:gap-8">
                 <div class="flex flex-col">
                     <?php if (has_custom_logo()) : ?>
@@ -29,24 +29,26 @@
                     <?php endif; ?>
                 </div>
             </div>
-            <?php get_template_part('components/search-form') ?>
+            <?php get_template_part('templates/components/search-form') ?>
             <div class="flex items-center gap-4">
-                <?php get_template_part('components/account-dropdown') ?>
+                <?php get_template_part('templates/components/account-dropdown') ?>
             </div>
         </div>
         <?php wp_nav_menu(
             array(
                 'theme_location' => 'primary',
                 'menu_class' => 'container flex flex-row items-center gap-4 md:gap-8 lg:gap-12',
-                'container_class' => 'border-t border-black/10 py-4 md:py-6',
+                'container_class' => 'bg-zinc-100 py-4',
                 'depth' => 1,
                 'link_before' => '<span class="flex font-medium text-black transition hover:text-red-700">',
                 'link_after' => '</span>'
             )
         ); ?>
         <?php if (!is_front_page()) : ?>
-            <div class="bg-gray-100">
-                <div class="container"><?php my_theme_breadcrumbs(); ?></div>
+            <div class="border-b border-zinc-200">
+                <div class="container">
+                    <?php get_template_part('templates/components/breadcrumbs') ?>
+                </div>
             </div>
         <?php endif; ?>
     </header>

@@ -15,13 +15,13 @@ if ($is_user_logged_in) {
             <span class="dashicons dashicons-arrow-down-alt2"></span>
         </a>
         <div class="absolute right-0 z-50 hidden w-48 mt-2 bg-white rounded-lg shadow-lg top-full" id="user-dropdown-menu">
-            <a href="<?= esc_url(get_edit_profile_url($current_user->ID)) ?>" class="flex items-center px-4 py-2 hover:bg-gray-100">
+            <a href="<?= esc_url(get_edit_profile_url($current_user->ID)) ?>" class="flex items-center px-4 py-2 hover:bg-zinc-100">
                 <span class="mr-2 dashicons dashicons-admin-users"></span>
                 <span class="text-black">
                     <?= esc_html__('My Account', 'textdomain') ?>
                 </span>
             </a>
-            <a href="<?= esc_url(wp_logout_url()) ?>" class="flex items-center px-4 py-2 hover:bg-gray-100">
+            <a href="<?= esc_url(wp_logout_url()) ?>" class="flex items-center px-4 py-2 hover:bg-zinc-100">
                 <span class="mr-2 dashicons dashicons-migrate"></span>
                 <span class="text-black">
                     <?= esc_html__('Log out', 'textdomain') ?>
@@ -52,7 +52,7 @@ if ($is_user_logged_in) {
             <span class="dashicons dashicons-admin-users <?= $is_user_logged_in ? 'group-hover:text-red-700' : '' ?>"></span>
             <span><?= $is_user_logged_in ? 'My Account' : 'Log in' ?></span>
         </a>
-        <span class="text-gray-400"><?= $is_user_logged_in ? '' : 'or' ?></span>
+        <span class="text-zinc-400"><?= $is_user_logged_in ? '' : 'or' ?></span>
         <a href="<?= esc_url(wp_registration_url()) ?>" class="flex items-center gap-2 group">
             <span class="dashicons dashicons-plus-alt <?= $is_user_logged_in ? 'hidden' : 'group-hover:text-red-700' ?>"></span>
             <span><?= $is_user_logged_in ? '' : 'Sign up' ?></span>
