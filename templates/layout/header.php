@@ -32,7 +32,7 @@
                     <div class="relative flex items-center gap-8">
                         <label for="search-input" class="sr-only"><?php esc_attr_e('Search', 'textdomain'); ?></label>
                         <input type="search" id="search-input" placeholder="<?php esc_attr_e('Search', 'textdomain'); ?>" name="s" value="<?php echo get_search_query(); ?>" class="flex-1 py-2 pl-4 pr-12 h-10 text-black rounded-full border border-zinc-200 focus:outline-none focus:ring-2 focus:ring-red-700 focus:border-transparent transition min-w-full lg:min-w-[25rem]" autocomplete="off" />
-                        <button type="submit" class="absolute inset-y-0 right-0 flex items-center justify-center w-10 h-10 px-4 text-white transition bg-red-700 rounded-full hover:bg-red-800" aria-label="<?php esc_attr_e('Submit search', 'textdomain'); ?>"><span class="dashicons dashicons-search"></span></button>
+                        <button type="submit" class="absolute inset-y-0 right-0 flex items-center justify-center w-10 h-10 px-4 text-white transition bg-red-700 rounded-full hover:bg-red-800" aria-label="<?php esc_attr_e('Submit search', 'textdomain'); ?>"><i class="ph ph-magnifying-glass"></i></button>
                     </div>
                 </form>
 
@@ -40,17 +40,14 @@
                     <div class="hidden loading-animation"><?= esc_html__('Loading...', 'textdomain'); ?></div>
                 </div>
             </div>
-            <button id="mega-menu__button" class="flex items-center gap-2 px-4 py-2 border rounded-md border-zinc-200">
-                <span>Categories</span>
-                <i id="mega-menu__button-icon" class="dashicons dashicons-menu"></i>
+            <button id="mega-menu__button" class="flex items-center gap-2">
+                <i id="mega-menu__button-icon" class="ph ph-list"></i>
             </button>
             <div id="mega-menu" class="absolute left-0 right-0 z-50 hidden transition bg-white shadow-xl top-full rounded-b-md">
                 <?php wp_nav_menu(array(
                     'theme_location' => 'primary',
                     'container_class' => 'border-t border-zinc-200 py-8',
                     'menu_class' => 'container flex flex-col gap-4 text-zinc-900 md:flex-row md:gap-8 lg:gap-12',
-                    'link_before' => '<span>',
-                    'link_after' => '</span>',
                     'depth' => 2,
                     'walker' => new Custom_Walker_Nav_Menu(), // add this line
                 )); ?>
@@ -58,7 +55,7 @@
         </div>
     </header>
     <?php if (!is_front_page()) : ?>
-        <div class="py-3 mb-16 border-t border-zinc-200 bg-zinc-100">
+        <div class="py-3 mb-16 border-t breadcrumbs border-zinc-200 bg-zinc-100">
             <div class="container flex items-center">
                 <?php echo theme_breadcrumbs(); ?>
             </div>

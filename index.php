@@ -12,7 +12,7 @@ if ($query->have_posts()) :
 				<h1><?php the_title(); ?></h1>
 				<a href="<?php the_permalink(); ?>" class="flex items-center self-start justify-center gap-2 px-8 py-3 font-semibold text-white transition border border-white group hover:bg-white hover:text-red-700 hover:border-transparent">
 					Read more
-					<span class="dashicons dashicons-arrow-right-alt !text-white group-hover:!text-red-700"></span>
+					<i class="ph ph-arrow-right !text-white group-hover:!text-red-700"></i>
 				</a>
 			</div>
 		</div>

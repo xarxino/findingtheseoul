@@ -17,5 +17,5 @@
             <div class="text-zinc-500 excerpt"><?php wp_trim_excerpt(the_excerpt(), 32, '..'); ?></div>
         </div>
     </div>
-    <a href="<?= get_permalink() ?>" class="flex items-center self-start gap-2 font-medium text-black">Read more<span class="dashicons dashicons-arrow-right-alt"></span></a>
+    <a href="<?= get_permalink() ?>" class="flex items-center self-start gap-2 font-medium text-black">Read more<i class="ph ph-arrow-right"></i></a>
 </article>

@@ -11,9 +11,6 @@ function enqueue_findingtheseoul_assets()
     // Enqueue the theme's bundled CSS file.
     wp_enqueue_style('findingtheseoul-styles', get_template_directory_uri() . '/assets/dist/bundle.css', array(), '1.0.0');
 
-    // Enqueue Dashicons for the backend.
-    wp_enqueue_style('dashicons');
-
     // Enqueue the theme's Google Fonts.
     wp_enqueue_style(
         'google-fonts',

@@ -45,6 +45,10 @@
     @apply text-black hover:text-red-700;
   }
 
+  i.ph {
+    @apply text-2xl;
+  }
+
   /* Layout */
   .container {
     @apply px-4 mx-auto md:px-8 lg:px-12;
@@ -52,10 +56,10 @@
 }
 
 @layer components {
-  .loading-animation {
-    @apply flex items-center justify-center space-x-2 text-lg font-bold after:content-[""] after:inline-block after:w-4 after:h-4 after:border-2 after:border-t-0 after:border-white after:rounded-full after:animate-spin;
+  .breadcrumbs i.ph {
+    @apply !text-lg;
   }
-
+  
   .live-search-input::-webkit-search-cancel-button {
     @apply hidden;
   }
@@ -117,14 +121,4 @@
   to {
     transform: translateY(-100%);
   }
-}
-
-html {
-  overscroll-behavior-x: contain;
-  overscroll-behavior-y: contain;
-}
-
-body {
-  overscroll-behavior-x: contain;
-  overscroll-behavior-y: contain;
 }

@@ -46,8 +46,7 @@
                     <div class="font-semibold"><?= esc_attr_e('Organizations', 'textdomain'); ?></div>
                     <a href="#" class="flex items-center gap-2 text-white/50 group ">
                         <?= esc_attr_e('Get in touch', 'textdomain'); ?>
-                        <span class="dashicons dashicons-arrow-right-alt"></span>
-                    </a>
+                        <i class="ph ph-arrow-right"></i> </a>
                 </div>
             </div>
         </div>
@@ -58,14 +57,12 @@
                     wp_nav_menu([
                         'theme_location' => 'social-menu',
                         'menu_class' => 'flex gap-6',
-                        'link_before' => '<span class="dashicons">',
-                        'link_after' => '</span>',
                     ]);
                     ?>
                 <?php endif; ?>
             </div>
             <div class="flex items-center gap-2">
-                <span class="dashicons dashicons-translation"></span>
+                <i class="ph ph-translate"></i>
                 <span><?= esc_attr_e('English', 'textdomain'); ?></span>
             </div>
         </div>
