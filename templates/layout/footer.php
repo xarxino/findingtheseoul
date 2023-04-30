@@ -14,7 +14,7 @@
                     'taxonomy' => 'category',
                     'parent' => 0,
                     'hide_empty' => false,
-                    'exclude' => get_option('default_category')
+                    'exclude' => [1]
                 ]);
 
                 foreach ($parent_categories as $parent_category) :
@@ -38,7 +38,6 @@
                         </ul>
                     </div>
                 <?php endforeach; ?>
-
             </div>
             <div class="flex flex-col gap-4">
                 <h4 class="font-sans text-base font-bold leading-none uppercase"><?= esc_attr_e('Contact us', 'textdomain'); ?></h4>
