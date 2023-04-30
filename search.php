@@ -1,18 +1,38 @@
-<?php
-/**
- * Search results page
- *
- * Methods for TimberHelper can be found in the /lib sub-directory
- *
- * @package  WordPress
- * @subpackage  Timber
- * @since   Timber 0.1
- */
+<?php get_template_part('templates/layout/header');
+$search_query = get_search_query();
+?>
 
-$templates = array( 'search.twig', 'archive.twig', 'index.twig' );
+<div class="max-w-6xl px-4 py-12 mx-auto sm:px-6 lg:px-8">
+    <h1 class="mb-8 text-3xl font-bold">
+        <?php printf(__('Search Results for: %s', 'textdomain'), '<span class="text-blue-500">' . get_search_query() . '</span>'); ?>
+    </h1>
 
-$context          = Timber::context();
-$context['title'] = 'Search results for ' . get_search_query();
-$context['posts'] = new Timber\PostQuery();
+    <?php if (have_posts()) : ?>
+        <ul>
+            <?php while (have_posts()) :
+                the_post(); ?>
+                <li>
+                    <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+                    <p class="text-gray-500"><?php the_author(); ?> | <?php the_date(); ?> | <?php the_category(', '); ?></p>
+                    <div class="mb-4 text-zinc-700">
+                        <?php the_excerpt(); ?>
+                    </div>
+                </li>
+            <?php endwhile; ?>
+        </ul>
 
-Timber::render( $templates, $context );
+        <?php the_posts_pagination(
+            array(
+                'prev_text' => __('Previous', 'textdomain'),
+                'next_text' => __('Next', 'textdomain'),
+            )
+        ); ?>
+
+    <?php else : ?>
+        <p>
+            <?php _e('Sorry, no results were found.', 'textdomain'); ?>
+        </p>
+    <?php endif; ?>
+</div>
+
+<?php get_template_part('templates/layout/footer'); ?>

@@ -1,13 +1,14 @@
-<?php
-/**
- * The template for displaying 404 pages (Not Found)
- *
- * Methods for TimberHelper can be found in the /functions sub-directory
- *
- * @package  WordPress
- * @subpackage  Timber
- * @since    Timber 0.1
- */
+<?php get_template_part('templates/layout/header'); ?>
 
-$context = Timber::context();
-Timber::render( '404.twig', $context );
+    <?php while (have_posts()):
+        the_post(); ?>
+        <h1>
+            <?php the_title(); ?>
+        </h1>
+        <div class="entry-content">
+            <?php the_content(); ?>
+        </div>
+    <?php endwhile; ?>
+</main>
+
+<?php get_template_part('templates/layout/footer'); ?>
