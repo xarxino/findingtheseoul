@@ -45,7 +45,7 @@
             </button>
             <div id="mega-menu" class="absolute left-0 right-0 z-50 hidden transition bg-white shadow-xl top-full rounded-b-md">
                 <?php wp_nav_menu(array(
-                    'theme_location' => 'primary',
+                    'theme_location' => 'header',
                     'container_class' => 'border-t border-zinc-200 py-8',
                     'menu_class' => 'container flex flex-col gap-4 text-zinc-900 md:flex-row md:gap-8 lg:gap-12',
                     'depth' => 2,

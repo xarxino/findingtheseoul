@@ -37,10 +37,10 @@ add_action('wp_enqueue_scripts', 'enqueue_findingtheseoul_assets');
  ***************************** */
 function register_findingtheseoul_menus()
 {
-    // Register the 'Primary Menu' and 'Footer Menu' navigation menus.
+    // Register the 'Header Menu' and 'Footer Menu' navigation menus.
     register_nav_menus(
         array(
-            'primary' => __('Primary Menu', 'findingtheseoul'),
+            'header' => __('Header Menu', 'findingtheseoul'),
             'footer' => __('Footer Menu', 'findingtheseoul'),
         )
     );
